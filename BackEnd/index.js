@@ -5,12 +5,18 @@ const app = express();
 const cors = require("cors");
 const connection = require("./Configuration/config");
 const userController = require("./Routes/user.routes");
+const authentication = require("./Middleware/authentication");
+const bmiController = require("./Routes/bmiCaluclator.routes");
 app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Well come to home");
 });
 app.use("/user", userController);
+
+app.use(authentication)
+app.use("/bmi", bmiController);
+
 app.listen(process.env.PORT, async () => {
   try {
     await connection;
