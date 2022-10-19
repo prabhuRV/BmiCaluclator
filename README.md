@@ -23,7 +23,7 @@ FrontEnd
 ------------
 
 ## Preview
-<img width="1440" alt="Screenshot 2022-10-19 at 3 4:50 PM" src="https://imgur.com/DWxQfqb">
+<img width="1440" alt="Screenshot 2022-10-19 at 3 4:50 PM" src="https://i.imgur.com/DWxQfqb.png">
 <img width="1440" alt="Screenshot 2022-10-19 at 3 4:50 PM" src="https://imgur.com/DWxQfqb">
 <img width="1440" alt="Screenshot 2022-10-19 at 3 4:50 PM" src="https://imgur.com/DWxQfqb">
 
