@@ -40,6 +40,7 @@ userController.post("/login",async (req,res)=>
     const hassed_password=user.password
     const userId=user._id
 
+
     await bcrypt.compare(password,hassed_password,async(err,result)=>
     {
     
@@ -56,5 +57,11 @@ userController.post("/login",async (req,res)=>
     })
 })
 
+userController.get("/profile/:email", async (req, res) => {
+    const {email} = req.params
+  
+    const data = await userModel.findOne({email})
+    res.send({"massage":"Result Massage",data:data})
+ })
 
 module.exports=userController

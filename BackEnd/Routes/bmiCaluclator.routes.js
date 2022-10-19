@@ -19,8 +19,9 @@ console.log(bmi)
 )
 
 bmiController.get("/", async (req, res) => {
-    const {userId} = req.body
-    const data = await bmiModel.find({userId})
+    const {user_Id} = req.body
+  //  console.log(user_Id)
+    const data = await bmiModel.find({user_Id})
     res.send({"massage":"Result Massage",data:data})
  })
 

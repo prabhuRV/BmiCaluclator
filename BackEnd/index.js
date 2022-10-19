@@ -8,7 +8,7 @@ const userController = require("./Routes/user.routes");
 const authentication = require("./Middleware/authentication");
 const bmiController = require("./Routes/bmiCaluclator.routes");
 app.use(express.json());
-
+app.use(cors())
 app.get("/", (req, res) => {
   res.send("Well come to home");
 });
@@ -19,7 +19,7 @@ app.use("/bmi", bmiController);
 
 app.listen(process.env.PORT, async () => {
   try {
-    await connection;
+    await connection
     console.log("db connected");
   } catch (error) {
     console.log("error in connecting db");
