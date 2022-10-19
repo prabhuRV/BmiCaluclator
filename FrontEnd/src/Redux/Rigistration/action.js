@@ -9,7 +9,7 @@ export const postRegiste = async ({ value, dispatch }) => {
     type: REGISTER_USER,
   });
   return axios({
-    url: "http://localhost:8080/user/signup",
+    url: "https://floating-brushlands-32030.herokuapp.com/user/signup",
     method: "post",
     data: {
      

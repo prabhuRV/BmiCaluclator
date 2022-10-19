@@ -9,7 +9,7 @@ const [name, setName] = useState("")
 const navigate = useNavigate();
 const getProfile=async(email)=>
 {
-let res=await fetch(`http://localhost:8080/user/profile/${email}`)
+let res=await fetch(`https://floating-brushlands-32030.herokuapp.com/user/profile/${email}`)
 let data=await res.json()
 setName(data.data.name)
 }

@@ -6,7 +6,7 @@ import { getData } from '../../Redux/BmiData/action';
 export const DashBoard = () => {
 
     const { bmi } = useSelector((state) => state.bmi);
- console.log(bmi)
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export const DashBoard = () => {
   
   return (
     <Box>
-  
+  {bmi.data==="Please login again"?<Box>{bmi.data}</Box>:""}
         <TableContainer width={"60%"} margin={"auto"}>
     <Table variant='striped' colorScheme='teal'>
       

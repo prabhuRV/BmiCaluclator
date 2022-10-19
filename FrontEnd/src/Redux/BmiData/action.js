@@ -41,13 +41,14 @@ export const addTodoFaliue=()=>
   };
 }
 let token=localStorage.getItem('token')
+console.log(token)
 export const addinTodo= (payload)=>(dispatch)=>
 {
   console.log(payload);
 
     dispatch(addTodoRequest())
   return axios({
-    url: "http://localhost:8080/bmi/create",
+    url: "https://floating-brushlands-32030.herokuapp.com/bmi/create",
     method: "post",
     headers: {
       'Authorization': `Bearer ${token}` 
@@ -57,8 +58,8 @@ export const addinTodo= (payload)=>(dispatch)=>
     
   })
     .then((res) => {
-       //console.log(res.data),
-      dispatch(addTodoSuccess(res.data))
+      console.log(res.data)
+     // dispatch(addTodoSuccess(res.data))
     })
     .catch((err) => {
       console.log(err);
@@ -68,7 +69,7 @@ export const addinTodo= (payload)=>(dispatch)=>
 
 export const getData =  () => (dispatch) => {
   dispatch(getTodoRequest());
- return  axios({url:"http://localhost:8080/bmi/",
+ return  axios({url:"https://floating-brushlands-32030.herokuapp.com/bmi/",
  method:"get",
  headers: {
    'Authorization': `Bearer ${token}` 
@@ -78,29 +79,3 @@ export const getData =  () => (dispatch) => {
 dispatch(getTodoSuccrss(res.data)))
     .catch((err) => dispatch(getTodoFailure()));
 };
-
-// export const deleteTodos =  (_id) => (dispatch) => {
-//   dispatch(getTodoRequest());
-//   //console.log(id)
-//   return axios({url:`https://mysterious-sea-01854.herokuapp.com/todo/${_id}/delete`,
-//     method:"delete",
-//     headers: {
-//       'Authorization': `Basic ${token}` 
-//     }})
-//     .then((res) => dispatch(deleteTodoSuccess(res.data)))
-//     .catch((err) => dispatch(deleteTodoFaliure()));
-// };
-
-// export const updateTodos =  (_id,payload) => (dispatch) => {
-//   dispatch(getTodoRequest());
-//   //console.log(id)
-//   return axios({url:`https://mysterious-sea-01854.herokuapp.com/todo/${_id}/edit`,
-//     method:"patch",
-//     headers: {
-//       'Authorization': `Basic ${token}` 
-//     },
-//     data:payload
-//   })
-//     .then((res) => dispatch(deleteTodoSuccess(res.data)))
-//     .catch((err) => dispatch(deleteTodoFaliure()));
-// };

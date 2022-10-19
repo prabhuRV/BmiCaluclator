@@ -29,14 +29,13 @@ export const Login = () => {
 //   const login = useSelector((state) => state.login);
  let tokk=login?.token
 
- let mes=login?.message
-// console.log(login)
+
+
   useEffect(()=>
   {
-    setMassge(mes)
     setToken(tokk)
-  },[tokk,mes])
-  localStorage.setItem('token', tokens)
+  },[tokk])
+  localStorage.setItem('token', tokk)
   const dispatch=useDispatch()
   
  // console.log(tokens);

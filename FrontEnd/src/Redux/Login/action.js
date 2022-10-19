@@ -8,7 +8,7 @@ export const postLogi = async ({ value, dispatch}) => {
    type: LOGIN_USER,
  });
  return axios({
-   url: "https://mysterious-sea-01854.herokuapp.com/user/login",
+   url: "https://floating-brushlands-32030.herokuapp.com/user/login",
    method: "post",
    data: {
     
